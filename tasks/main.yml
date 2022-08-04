@@ -43,7 +43,7 @@
     dest: "{{ sshd_config_location }}"
   notify:
     - restart sshd
-
+    
 - name: sw-basic | 6. Start and enable openssh-server service
   ansible.builtin.service:
     name:
