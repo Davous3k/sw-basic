@@ -19,7 +19,7 @@
     name: "{{ item }}"
     state: present
     update_cache: yes
-  with_item: "{{ additional_pkgs }}"
+  with_items: "{{ additional_pkgs }}"
   when: additional_pkgs is defined
 
 - name: sw-basic | 3. Install additional services if defined
@@ -27,7 +27,7 @@
     name: "{{ item }}"
     state: present
     update_cache: yes
-  with_item: "{{ additional_services }}"
+  with_items: "{{ additional_services }}"
   when: additional_services is defined
 
 - name: sw-basic | 4. Add ssh public key file
@@ -46,8 +46,7 @@
     
 - name: sw-basic | 6. Start and enable openssh-server service
   ansible.builtin.service:
-    name:
-    - openssh-server
+    name: sshd
     state: "{{ sshd_service_state }}"
     enabled: "{{ sshd_service_enabled }}"
 
@@ -56,4 +55,4 @@
     name: "{{ item }}"
     state: "{{ additional_services_state }}"
     enabled: "{{ additional_services_enabled }}"
-  with_item: "{{ additional_services }}"
+  with_items: "{{ additional_services }}"
