@@ -1,0 +1,9 @@
+---
+additional_pkgs: {}
+additional_services: {}
+sshd_username: root
+sshd_key_file_name: key.pub
+sshd_service_state: started
+sshd_service_enabled: yes
+additional_services_state: started
+additional_services_enabled: yes
