@@ -1,2 +1,2 @@
 # sw-basic
-Basic package deployment
+Basic ansible package deployment
